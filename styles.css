@@ -1,0 +1,217 @@
+﻿.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-nav .nav-link {
+    color: white ;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+}
+
+    .navbar-nav .nav-link:hover {
+        background-color: white;
+        color: white !important;
+    }
+
+.navbar-brand img {
+    width: 1150px; /* Adjust width */
+    height: 1150px; /* Maintain aspect ratio */
+}
+
+/* Hero Section */
+.hero {
+    background: url('C:\Users\Snenhlanhla Vilakazi\source\repos\BusisisweJoy\pic2.png') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 0 3rem;
+}
+
+    .hero .text-container h1 {
+        font-size: 9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        max-width: 100%;
+        font-family: 'Script MT', serif; /* Example font change */
+        color: beige; /* Gold color for contrast, change as needed */
+    }
+
+    .hero .text-container h2 {
+        font-size: 5rem;
+        font-family: 'Playfair Display';
+        color: black
+        
+    }
+
+#hero-image {
+    border-radius: 0%;
+    width: 400px;
+    height: 550px;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    background-color: beige;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+    .about h2 {
+        color: #008080;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .about p {
+        color: #333;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+/* Custom Button Style */
+.btn-custom {
+    background-color: #C9B037; /* Brand yellow */
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+    .btn-custom:hover {
+        background-color: #008080; /* Teal */
+        color: white;
+    }
+
+/* Services Section */
+.services {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+    .services h2 {
+        color: #008080;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .services .service-card {
+        background-color: darkslategrey;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .services .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .services .service-card h4 {
+            font-size: 1.5rem;
+            color: #008080;
+            margin-bottom: 1rem;
+        }
+
+        .services .service-card p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+/* CEO Section */
+.ceo {
+    background-color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+    .ceo h2 {
+        color: #008080;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .ceo img {
+        border-radius: 100%;
+        border-block-color: black;
+        width: 200px;
+        height: 250px;
+        margin-bottom: 1rem;
+    }
+
+    .ceo p {
+        color: #333;
+        font-size: 1.1rem;
+    }
+
+/* Contact Section */
+.contact {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+    .contact h2 {
+        color: #008080;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact p {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .contact form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact input, .contact textarea {
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 2px solid #008080;
+        border-radius: 5px;
+    }
+
+        .contact input[type="submit"] {
+            background-color: #C9B037;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+            .contact input[type="submit"]:hover {
+                background-color: #008080;
+            }
+
+/* Footer */
+footer {
+    background-color: #008080;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
