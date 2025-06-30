@@ -6,37 +6,80 @@
     <title>Busisiwe Joy - Life Coaching</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             color: #333;
         }
+
         .navbar {
             background-color: white;
             padding: 15px;
         }
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #008080;
+
+        .navbar-brand img {
+            width: 200px;
+            height: auto;
         }
+
         .navbar-nav .nav-link {
             color: #008080;
             font-weight: 600;
         }
-        .hero {
-            background: url('Refedine success.png') no-repeat center center/cover;
+
+        .hero-section {
+            position: relative;
+            padding: 100px 20px 0 20px; /* Removed extra bottom padding */
+            background: linear-gradient(to right, #008080, #C9b037);
             color: white;
             text-align: center;
-            padding: 150px 20px;
-            position: relative;
+            overflow: hidden;
+            min-height: 100vh; /* Ensure the section covers full height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .hero h1 {
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.15; /* Adjust for visibility behind text */
+            pointer-events: none;
+        }
+
+
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 180px;
+        }
+
+
+        .hero-heading, .hero-heading2 {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: 2.5rem;
             font-weight: 700;
         }
+
+        .hero-heading2 {
+            color: #ffe373;
+        }
+
+        .hero-subheading {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
         .btn-ebook {
             background-color: #C9b037;
             color: white;
@@ -45,341 +88,253 @@
             cursor: pointer;
             margin-top: 20px;
         }
-        .about, .services, .contact, .newsletter, .ceo {
-            padding: 60px 20px;
-            text-align: center;
+
+        .animated-ceo-image {
+            animation: fadeSlideUp 1.2s ease-out forwards;
         }
-        .highlight {
-            background-color: #C9b037;
-            padding: 50px;
-            text-align: center;
-            color: white;
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .services .row {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .service-item {
-            background-color: #008080;
-            padding: 20px;
-            border-radius: 8px;
-            flex: 1;
-            min-width: 250px;
-        }
+
         .newsletter {
             background-color: #008080;
             color: white;
-            padding: 50px;
-        }
-        .newsletter input {
-            width: 50%;
-            padding: 10px;
-            border: none;
-            margin-right: 10px;
-        }
-        .newsletter button {
-            background-color: #C9b037;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        .about {
-            background-color: #f8f9fa;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .contact {
-            background-color: white;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .services .service-card {
-            background-color: darkslategrey;
-            padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-            .services .service-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .services .service-card h4 {
-                font-size: 1.5rem;
-                color: #008080;
-                margin-bottom: 1rem;
-            }
-
-            .services .service-card p {
-                font-size: 1rem;
-                color: #333;
-            }
-        .navbar .logo img {
-            width: 250px; 
-            height: auto;
-        }
-
-        .testimonials {
             padding: 60px 20px;
-            background-color: #f8f9fa;
+            text-align: center;
         }
 
-            .testimonials .stars {
-                color: #C9b037;
-                font-size: 20px;
+            .newsletter input {
+                width: 50%;
+                padding: 10px;
+                border: none;
+                margin-right: 10px;
             }
 
-            .testimonials img {
-                border: 3px solid #C9b037;
-                padding: 5px;
+            .newsletter button {
+                background-color: #C9b037;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
             }
 
-        .booking-section {
-            
-            `ul
-
-        {
-            list-style: none;
-            padding: 0;
+        .ceo-section {
+            padding: 60px 20px;
+            background-color: #C9b037;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
         }
 
-        li {
-            background: #ddd;
-            margin: 5px 0;
+            .ceo-section img {
+                max-width: 300px;
+                border-radius: 10px;
+                opacity: 0;
+            }
+
+        .ceo-text {
+            max-width: 600px;
+        }
+
+        .services-section {
+            padding: 60px 20px;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+
+            .services-section .service-item {
+                background-color: #008080;
+                padding: 20px;
+                margin: 20px auto;
+                border-radius: 8px;
+                max-width: 600px;
+            }
+            .services-section h2 {
+                color: #C9b037; /* yellow heading */
+            }
+
+        .free-journal {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+            .free-journal a {
+                background-color: #008080;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px;
+                text-decoration: none;
+            }
+
+        .contact-section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
             padding: 10px;
             border-radius: 5px;
-        }
-
-        input, button {
-            width: 100%;
-            padding: 20px;
-            margin: 5px 0;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
         }
-
-        button {
-            color: #f8f9fa;
-            cursor: pointer;
-        }
-
-            button:hover {
-                background: #218838;
-            }
-        
-
-       
-
-
-
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#"> </a>
+            <a class="navbar-brand" href="index.html">
+                <img src="Busisiwe Joy landscape.png" alt="Busisiwe Joy Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="logo">
-                <img src="Busisiwe Joy landscape.png" alt="Logo">
-            </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ceo">CEO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ceo">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero-section">
+        <img src="p4.png" alt="Busisiwe Joy" class="hero-image">
+        <div class="hero-text">
+            <h1 class="hero-heading">Master Yourself</h1>
+            <h2 class="hero-heading2">Redefining Success with God</h2>
+            <h1 class="hero-heading">Live a life that feels true</h1>
+            <p class="hero-subheading">For the woman who’s ready to let go of perfection and over-functioning, I guide you to personal mastery rooted in faith, authenticity, and simply being who God created you to be.</p>
+            <a href="#services" class="btn-ebook">Explore Services</a>
+        </div>
     </header>
 
-    <section id="about" class="about">
-        <h2>About Busisiwe Joy</h2>
-
-        <p>
-            "We’ve been conditioned to believe that success means overworking, proving ourselves,
-        <p> and meeting impossible standards. But if your success is draining you,it’s not aligned success."
-
-        <p>"I help evolving women  break free from burnout, redefine success, and build self-mastery so<p> they can confidently pace their journey, embrace authenticity, and create a life that aligns<p>
-            with who they truly are.
-        </p>
-    </section>
-
-
-
-
-    <section id="services" class="highlight services">
+    <section id="services" class="services-section">
         <h2>Services Offered</h2>
-        <div class="row">
-            <div class="service-item">
-                <h2>Personal Mastery Coaching</h2>
-                <p>What You’ll Get:</p>
-                <p>Personalized coaching to uncover and remove limiting beliefs</p>
-                <p>Deep mindset work to break free from perfectionism and self-doubt</p>
-                <p>Personal mastery techniques to build confidence, balance, and emotional resilience</p>
-                <p>Practical tools for aligning success with your authentic self</p>
-                <button class="btn btn-warning mt-3">Book Now</button>
-            </div>
 
-            <div class="service-item">
-                <h2>Workshops</h2>
-                <p>What You’ll Learn:</p>
-                <p>How to shift from burnout and self-doubt to clarity and confidence</p>
-                <p>The mindset and habits of women who thrive effortlessly</p>
-                <p>The framework for breaking free from limiting beliefs and perfectionism</p>
-                <button class="btn btn-warning mt-3">Book Now</button>
-            </div>
+        <div class="service-item">
+            <h3>Personal Mastery Coaching</h3>
+            <p><strong>What you'll get:</strong></p>
+            <ul style="text-align: left; max-width: 600px; margin: auto;">
+                <li>Gaining clarity on your vision — knowing where you're headed</li>
+                <li>Discovering your true identity — knowing who you are</li>
+                <li>Aligning your life with purpose — knowing your "Why"</li>
+                <li>Unlocking your full potential — knowing what you're capable of</li>
+            </ul>
 
-            <div class="service-item">
-                <h2>The Self-Mastery Group Program</h2>
-                <p>Live coaching calls focused on self-mastery, clarity, and personal growth</p>
-                <p>Community support with like-minded women on the same journey</p>
-                <p>Guided exercises & journaling to build confidence and alignment</p>
-                <p>A step-by-step framework for pacing success without burnout</p>
-                <button class="btn btn-warning mt-3">Book Now</button>
-            </div>
+        </div>
 
-            <div class="service-item">
-                <h2>Mentorship Programs</h2>
-                <p>Customized mentorship programs for women seeking personal and professional growth</p>
-                <p>One-on-one guidance to help you overcome obstacles and reach your full potential</p>
-                <button class="btn btn-warning mt-3">Book Now</button>
+        <div class="service-item">
+            <h3>The Slow and Deep Reading Experience</h3>
+            <p><strong>What you'll get:</strong></p>
+            <ul style="text-align: left; max-width: 600px; margin: auto;">
+                <li>Once-off webinar: "Read Less, Grow More"</li>
+                <li>Reader's journal to support the journey</li>
+            </ul>
+            <p><strong>This is for you if:</strong></p>
+            <ul style="text-align: left; max-width: 600px; margin: auto;">
+                <li>You love personal growth/spiritual books but forget what you read</li>
+                <li>You read a lot but rarely implement or reflect</li>
+                <li>You feel overwhelmed by too much information</li>
+                <li>You want a calm, consistent reading habit with meaning</li>
+                <li>You want to finish books you start</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section id="ceo" class="ceo-section">
+        <img src="pic2.png" alt="CEO" class="animated-ceo-image">
+        <div class="ceo-text">
+            <h2>Meet the CEO</h2>
+            <p>
+                Hi, I’m Busisiwe Joy,a faith-rooted personal mastery coach passionate about helping women live with intention, not performance.
+
+                For years, I looked like I had it together on the outside, but inside I was exhausted,overfunctioning,people-pleasing, and quietly losing myself. It wasn’t until I slowed down, invited God into the process, and began to redefine success on His terms that everything shifted.
+
+                Now, I help other women do the same: break free from pressure, reconnect with their true identity, and build lives rooted in clarity, courage, and peace.
+            </p>
+            <a href="about-ceo.html">
+                <button style="margin-top: 10px; padding: 10px 20px; background-color: #008080; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                    Learn More
+                </button>
+            </a>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <form class="contact-form mx-auto" style="max-width: 600px;">
+                <input type="text" class="form-control my-2" placeholder="Your Name" required>
+                <input type="email" class="form-control my-2" placeholder="Your Email" required>
+                <textarea class="form-control my-2" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-ebook mt-3">Send Message</button>
+            </form>
+
+            <!-- Facebook Icon -->
+            <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/busisiwe.mochoane.5" target="_blank" style="color: #008080; font-size: 24px;">
+                    <i class="bi bi-facebook"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="booking-section">
-        <h2>Book a Session</h2>
-        <form id="booking-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="text" id=" surname" placeholder="Your Surname" required>
-            <input type="email" id="email" placeholder="name@example.com">
-            <input type="date" id="date" required>
-            <input type="time" id="time" required>
-            <!-- Service Selection -->
-            <label for="service">Select a Service:</label>
-            <select id="service">
-                <option value="" disabled selected>Choose a service</option>
-                <option value="Personal Coaching">Personal Coaching</option>
-                <option value="Career Guidance">Career Guidance</option>
-                <option value="Mindset Training">Mindset Training</option>
-            </select>
 
-            <button type="submit">Confirm Booking</button>
-
-        </form>
-
-        
-    </section>
-
-    <section id="ceo" class="ceo">
-        <h2>Meet the CEO</h2>
-        <img src="C:\Users\Snenhlanhla Vilakazi\source\repos\BusisisweJoy\pic2.png" alt="CEO" style="width:200px; border-radius:10px;">
-        <p>
-            I know what it’s like to chase success, do all the “right” things, and still feel like something
-        <p>
-        <p> is missing. I spent years overachieving, striving for more, and yet, deep down, I felt<p>
-            disconnected
-            from myself. It wasn’t until I mastered myself—my mindset, my beliefs, and
-        <p>
-            my vision—that everything changed.
-
-            Now, I help evolving women do the same:
-        <p>
-            break free from the world’s expectations,
-            redefine success, and step into confidence, clarity,
-        <p>
-            and personal mastery.
-            Success shouldn’t be exhausting—it should feel aligned.
-        </p>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <h2 class="text-center">What Our Clients Say</h2>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-
-                <div class="carousel-item active text-center">
-                    <img src="C:\Users\Snenhlanhla Vilakazi\source\repos\BusisisweJoy\Screenshot 2025-02-27 110717.png" alt="Client 1" class="rounded-circle" width="80">
-                    <p class="mt-3">"Busisiwe Joy transformed my life! Her coaching helped me redefine success and achieve my goals."</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <h5>- Amanda S.</h5>
-                </div>
-
-                <div class="carousel-item text-center">
-                    <img src="C:\Users\Snenhlanhla Vilakazi\source\repos\BusisisweJoy\Screenshot 2025-02-27 110717.png" alt="Client 2" class="rounded-circle" width="80">
-                    <p class="mt-3">"A truly inspiring experience. I feel more confident and focused thanks to her guidance."</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <h5>- Lisa M.</h5>
-                </div>
-
-                <div class="carousel-item text-center">
-                    <img src="profile3.jpg" alt="Client 3" class="rounded-circle" width="80">
-                    <p class="mt-3">"Highly recommend! Busisiwe Joy is an incredible life coach who truly cares."</p>
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <h5>- Thandi N.</h5>
-                </div>
-
-            </div>
-
-            <!-- Carousel controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-    </section>
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>Email: contact@busisiwejoy.com</p>
-        <p>Location: Pretoria, South Africa</p>
+    <section class="free-journal">
+        <h2>Get Your Free Journal</h2>
+        <p>Sign up to receive a free downloadable journal designed to help you reflect, grow, and stay aligned on your journey of personal mastery.</p>
+        <a href="#">Download Now</a>
     </section>
 
     <section class="newsletter">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Get exclusive tips and insights from Busisiwe Joy.</p>
-        <input type="email" id="email" placeholder="Enter your email">
-        <button onclick="subscribeNewsletter()">Subscribe</button>
+        <form action="https://formsubmit.co/busisiwevilakazi33@gmail.com" method="POST">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get exclusive tips and insights from Busisiwe Joy.</p>
+            <input type="email" id="newsletter-email" placeholder="Enter your email">
+            <button onclick="subscribeNewsletter()">Subscribe</button>
+            </form>
     </section>
 
     <script>
-        function subscribeNewsletter() {
-            let email = document.getElementById("email").value;
-            if (email) {
-                alert("Thank you for subscribing, " + email + "!");
-            } else {
-                alert("Please enter a valid email address.");
+        window.addEventListener('scroll', function () {
+            const image = document.querySelector('.hero-image');
+            const position = image.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (position < windowHeight - 100) {
+                image.style.opacity = "1";
             }
-        }
 
-        document.getElementById('booking-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-
-            if (name && date && time) {
-                const bookingList = document.getElementById('bookings-list');
-                const listItem = document.createElement('li');
-                listItem.textContent = `${name} - ${date} at ${time}`;
-                bookingList.appendChild(listItem);
-
-                document.getElementById('booking-form').reset();
+            const ceoImage = document.querySelector('.animated-ceo-image');
+            const ceoPos = ceoImage.getBoundingClientRect().top;
+            if (ceoPos < windowHeight - 100) {
+                ceoImage.style.opacity = "1";
             }
         });
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert(`Thank you for subscribing, ${email}!`);
+            }
+        }
     </script>
 </body>
 </html>
